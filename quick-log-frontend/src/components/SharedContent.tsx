@@ -55,9 +55,10 @@ export default function SharedContent() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {contents.map((item) => (
             <NoteCard
+            contentId={item._id}
               key={item._id}
               title={item.title}
-              description={item.description}
+          
               tags={item.tags}
               dateAdded={new Date(item.createdAt).toLocaleDateString()}
               imageUrl={item.imageUrl}

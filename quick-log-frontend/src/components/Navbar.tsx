@@ -78,9 +78,10 @@ export default function NavBar() {
           type="button"
           className="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-100 transition"
           onClick={shareBrain}
+          disabled={loading}
         >
           <Share2 size={16} />
-          <span>Share Brain</span>
+         <span>{loading ? "Sharing..." : "Share Brain"}</span>
         </button>
 
         <button

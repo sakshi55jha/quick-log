@@ -27,7 +27,7 @@ export default function NoteCard({
   const handleDelete = async()=>{
     try{
     const token = localStorage.getItem("token")
-    const res = await axios.delete(BACKEND_URL + "/api/v1/content", {
+   await axios.delete(BACKEND_URL + "/api/v1/content", {
       headers:{
       Authorization : token,
       },

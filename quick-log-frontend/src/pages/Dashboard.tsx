@@ -4,7 +4,7 @@ import NavBar from '../components/Navbar'
 import NoteCard from '../components/NoteCard'
 import Sidebar from '../components/Sidebar'
 import axios from "axios";
-
+import { BACKEND_URL } from "../config";
 
 function Dashboard() {
  const [contents, setContents] = useState<any[]>([]);
@@ -15,7 +15,7 @@ function Dashboard() {
     try {
       const token = localStorage.getItem("token");
 
-      const res = await axios.get("http://localhost:3000/api/v1/content", {
+      const res = await axios.get(BACKEND_URL + "/api/v1/content", {
         headers: {
           Authorization: token,
         },

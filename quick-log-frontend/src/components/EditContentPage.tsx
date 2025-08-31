@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
+import { BACKEND_URL } from "../config";
 
 export default function EditContentPage() {
   const { contentId } = useParams();
@@ -27,7 +28,7 @@ export default function EditContentPage() {
       const token = localStorage.getItem("token");
 
       const response = await axios.put(
-        "http://localhost:3000/api/v1/edit-content",
+        BACKEND_URL + "/api/v1/edit-content",
         {
           contentId,
           title,

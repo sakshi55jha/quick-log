@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { BACKEND_URL } from "../config";
 
 export default function SignIn() {
   const [form, setForm] = useState({
@@ -20,7 +21,7 @@ export default function SignIn() {
    e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:3000/api/v1/signup", {
+      const response = await fetch(BACKEND_URL + "/api/v1/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),

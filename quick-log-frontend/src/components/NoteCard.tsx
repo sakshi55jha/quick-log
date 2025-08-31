@@ -2,6 +2,7 @@ import { Share2, Edit3, Trash2 } from "lucide-react";
 import LinkPreview from "./LinkPreview";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { BACKEND_URL } from "../config";
 
 type CardProps = {
   contentId: string;
@@ -26,7 +27,7 @@ export default function NoteCard({
   const handleDelete = async()=>{
     try{
     const token = localStorage.getItem("token")
-    const res = await axios.delete("http://localhost:3000/api/v1/content", {
+    const res = await axios.delete(BACKEND_URL + "/api/v1/content", {
       headers:{
       Authorization : token,
       },

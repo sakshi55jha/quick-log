@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import NoteCard from "./NoteCard";
-
+import { BACKEND_URL } from "../config";
 type ContentType = {
   _id: string;
   title: string;
@@ -26,7 +26,7 @@ export default function SharedContent() {
     const fetchSharedContent = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:3000/api/v1/manager/${shareLink}`
+         `${BACKEND_URL}/api/v1/manager/${shareLink}`
         );
 
         setContents(res.data.content);

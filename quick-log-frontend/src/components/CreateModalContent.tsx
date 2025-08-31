@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import { BACKEND_URL } from "../config";
 
 interface CreateModalContentProps{
     isOpen: boolean;
@@ -42,7 +43,7 @@ const handleSubmit = async(e: React.FormEvent)=>{
       }
              
       const res = await axios.post(
-        "http://localhost:3000/api/v1/content", // your route
+        BACKEND_URL + "/api/v1/content", // your route
         {
           title: form.title,
           link: form.link,

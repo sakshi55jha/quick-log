@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
+import { BACKEND_URL } from "../config";
 
 export default function Login() {
   const [form, setForm] = useState({
@@ -17,7 +17,7 @@ export default function Login() {
   const handleSubmit = async(e: React.FormEvent) => {
     e.preventDefault();
    try{
-   const res = await axios.post("http://localhost:3000/api/v1/login", form)
+   const res = await axios.post(BACKEND_URL + "/api/v1/login", form)
    if (res.data.token){
     localStorage.setItem("token", res.data.token);
     //Redirect to the dashboard

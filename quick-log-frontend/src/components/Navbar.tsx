@@ -2,6 +2,7 @@ import { Share2, Plus, Menu, User } from "lucide-react";
 import { useState, useEffect } from "react";
 import CreateModalContent from "./CreateModalContent";
 import axios from "axios";
+import { BACKEND_URL } from "../config";
 
 export default function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -28,7 +29,7 @@ export default function NavBar() {
       const token = localStorage.getItem("token");
 
       const res = await axios.post(
-        "http://localhost:3000/api/v1/manager/share",
+        BACKEND_URL + "/api/v1/manager/share",
         { share: true },
         {
           headers: {

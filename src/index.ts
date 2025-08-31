@@ -245,10 +245,13 @@ res.json({
 })
 
 
-async function main(){
-await mongoose.connect(process.env.MONGO_URL!);
-app.listen(3000);
-console.log("connected to app")
+async function main() {
+  await mongoose.connect(process.env.MONGO_URL!);
+
+  const PORT = process.env.PORT || 3000;   // 👈 use Render’s PORT in production
+  app.listen(PORT, () => {
+    console.log(`✅ Connected to app and running on port ${PORT}`);
+  });
 }
 
 main();

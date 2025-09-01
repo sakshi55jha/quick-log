@@ -59,11 +59,11 @@ export default function SignIn() {
           />
           {/* Password */}
           <input
-           type="password"
-        placeholder="8+ chars: uppercase, lowercase, number & special char"
-        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
-        title="Password must be at least 8 characters, include uppercase, lowercase, number, and special character."
-  
+            type="password"
+            name="password"
+            placeholder="Password"
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+            title="Password must be at least 8 characters, include uppercase, lowercase, number, and special character."
             value={form.password}
             onChange={handleChange}
             className="px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none"

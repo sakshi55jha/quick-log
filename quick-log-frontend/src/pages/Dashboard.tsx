@@ -56,19 +56,29 @@ const filteredContents = activeType === "all"
         <NavBar/>
 
         {/* Page content */}
-       <div className="p-6 mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-     {filteredContents.map((item) => (
-            <NoteCard
-             contentId={item._id} 
-              key={item._id}
-              title={item.title}
-              link={item.link}
-              type={item.type}
-              tags={item.tags}
-              dateAdded={new Date(item.createdAt).toLocaleDateString()}
-/>
+        
+   <div className="p-6 mt-4">
+  {filteredContents.length === 0 ? (
+    <div className="text-center text-gray-500 text-lg font-medium py-10">
+      🚀 No content added yet
+    </div>
+  ) : (
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {filteredContents.map((item) => (
+        <NoteCard
+          contentId={item._id}
+          key={item._id}
+          title={item.title}
+          link={item.link}
+          type={item.type}
+          tags={item.tags}
+          dateAdded={new Date(item.createdAt).toLocaleDateString()}
+        />
       ))}
     </div>
+  )}
+</div>
+
     </div>
     </div>
        

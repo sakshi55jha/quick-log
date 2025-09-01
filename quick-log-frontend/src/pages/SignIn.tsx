@@ -92,7 +92,7 @@ export default function SignIn() {
             type="submit"
             className="bg-blue-600 text-white py-2 rounded-lg font-semibold hover:bg-blue-700 transition"
           >
-            Sign Up
+            SignIn
           </button>
         </form>
 

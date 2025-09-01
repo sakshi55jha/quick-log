@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { BACKEND_URL } from "../config";
 
 export default function Login() {
@@ -66,9 +66,9 @@ export default function Login() {
         </form>
         <p className="text-sm text-gray-500 text-center mt-4">
           Don’t have an account?{" "}
-          <a href="/signin" className="text-blue-600 hover:underline">
-            Sign up
-          </a>
+     <Link to="/signin" className="text-blue-600 hover:underline">
+            Log in
+          </Link>
         </p>
       </div>
     </div>
